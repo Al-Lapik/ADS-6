@@ -11,7 +11,7 @@ struct SYM {
 template<typename T, int size>
 class TPQueue {
  private:
-    T arr[48];
+    T arr[size];
     int first, last;
 
  public:

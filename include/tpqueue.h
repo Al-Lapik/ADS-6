@@ -26,11 +26,8 @@ class TPQueue {
     }
 
     void shift(int position) {
-        for (int i = (last - 1) % size; i > position; i--) {
-            if (arr[i - 1].ch != '\0') {
-                arr[i] = arr[i - 1];
-            }
-        }
+        for (int i = (last - 1) % size; i > position; i--)
+            arr[i] = arr[i - 1];
     }
 
     void push(T value) {

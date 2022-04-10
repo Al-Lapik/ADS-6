@@ -11,7 +11,7 @@ struct SYM {
 template<typename T, int size>
 class TPQueue {
  private:
-    T arr[10];
+    T arr[100];
     int first, last;
 
  public:
@@ -26,8 +26,10 @@ class TPQueue {
     }
 
     void shift(int position) {
-        for (int i = (last - 1) % size; i > position; i--)
-            arr[i] = arr[i - 1];
+        for (int i = (last - 1) % size; i > position; i--) {
+            arr[i].ch = arr[i - 1].ch;
+            arr[i].prior = arr[i - 1].prior;
+        }
     }
 
     void push(T value) {

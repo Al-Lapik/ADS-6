@@ -3,10 +3,15 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
+struct SYM {
+    char ch;
+    int prior;
+};
+
 template<typename T, int size>
 class TPQueue {
  private:
-    T arr[size];
+    T arr[5];
     int first, last;
 
  public:
@@ -56,4 +61,5 @@ class TPQueue {
         }
     }
 };
-#endif
+
+#endif  // INCLUDE_TPQUEUE_H_

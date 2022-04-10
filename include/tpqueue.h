@@ -19,7 +19,7 @@ class TPQueue {
 
     void push(T value) {
         int i = last;
-        while (--i >= first && value.prior > *(arr + i % size)->prior)
+        while (--i >= first && value.prior > (*(arr + i % size)).prior)
             *(arr + (i + 1) % size) = *(arr + i % size);
         *(arr + (i + 1) % size) = value;
         last++;
